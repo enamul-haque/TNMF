@@ -26,8 +26,8 @@ def get_precision(actual, pred):
     # Ignore nonzero terms.
     pred = np.array(pred[actual.nonzero()].flatten())
     actual = np.array(actual[actual.nonzero()].flatten())
-    pred = np.where(pred>0,1,0)
-    actual = np.where(actual>0,1,0)
+   # pred = np.where(pred>0,1,0)
+    #actual = np.where(actual>0,1,0)
     
     return precision_score(pred, actual)
     
@@ -48,8 +48,8 @@ def get_mse(pred, actual):
     # Ignore nonzero terms.
     pred = pred[actual.nonzero()].flatten()
     actual = actual[actual.nonzero()].flatten()
-    pred = np.where(pred>0,1,0)
-    actual = np.where(actual>0,1,0)
+    #pred = np.where(pred>0,1,0)
+    #actual = np.where(actual>0,1,0)
     
     return mean_squared_error(pred, actual)
 
